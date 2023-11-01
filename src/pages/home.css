@@ -1,0 +1,14 @@
+.home {
+  display: flex;
+  justify-content: space-between;
+}
+.home .sidebar {
+  flex: 1;
+  background-color: #fff;
+  padding: 1rem;
+}
+.home .rightBar {
+  flex: 2 1;
+  background-color: #f7ecdc;
+  height: 100vh;
+}
