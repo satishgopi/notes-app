@@ -54,6 +54,7 @@ const SideBar = (props) => {
   const handleSubmit = (e) => {
     e.preventDefault();
     props.onSubmit(name, color);
+    setModel(false);
   };
 
   return (

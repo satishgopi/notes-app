@@ -30,6 +30,8 @@
   display: flex;
   align-items: center;
   gap: 1rem;
+  padding: 0.5rem 1rem;
+  cursor: pointer;
 }
 .chat-profile h1 {
   color: #000;
@@ -137,9 +139,10 @@
   width: 40px;
   height: 40px;
   border-radius: 50%;
+  border: 2px solid transparent;
 }
-.color-box:active {
-  border: 1px solid #000;
+.color-box:hover {
+  border: 2px solid #878383;
 }
 .create-btn {
   border-radius: 10px;

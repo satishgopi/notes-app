@@ -3,6 +3,7 @@ import SideBar from "../components/SideBar";
 import RightBar from "../components/RightBar";
 import "../pages/home.css";
 import ChatProfile from "../components/ChatProfile";
+import { v4 as uuid } from "uuid";
 
 const Home = () => {
   const [note, setNote] = useState([]);
@@ -10,7 +11,7 @@ const Home = () => {
     setNote((prevNotes) => [
       ...prevNotes,
       {
-        id: "1",
+        id: uuid(),
         nameE: name,
         colorE: color,
       },
@@ -19,13 +20,14 @@ const Home = () => {
   };
 
   useEffect(() => {
-    const data = JSON.parse(localStorage.getItem("profileData"));
-    if (data) {
-      setNote(data);
+    const storedNotes = JSON.parse(localStorage.getItem("profileData"));
+    if (storedNotes) {
+      setNote(storedNotes);
     }
   }, []);
+
   useEffect(() => {
-    window.localStorage.setItem("profileData", JSON.stringify(note));
+    localStorage.setItem("profileData", JSON.stringify(note));
   }, [note]);
 
   return (
