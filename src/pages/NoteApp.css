@@ -1,0 +1,255 @@
+.app-container {
+  display: flex;
+  width: 100%;
+  height: 100vh;
+}
+.sidebar {
+  flex: 1;
+  margin: 1rem 0 1rem 1rem;
+}
+.main-content {
+  flex: 2;
+  background-color: #f7ecdc;
+  position: relative;
+}
+.create-notes-btn {
+  border-radius: 13rem;
+  background: #000;
+  padding: 1rem;
+  width: 85%;
+  cursor: pointer;
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 18px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 97.688%;
+  letter-spacing: 0.54px;
+  margin: 1rem;
+}
+/* MODEL */
+.modal {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background: rgba(0, 0, 0, 0.5); /* Semi-transparent background */
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  z-index: 899; /* Ensure it's displayed on top of other content */
+}
+
+.modal-content {
+  background: white;
+  padding: 20px;
+  border-radius: 8px;
+  box-shadow: 0px 0px 10px rgba(0, 0, 0, 0.2);
+  z-index: 999;
+  text-align: start;
+}
+
+.overlay {
+  width: 100vw;
+  height: 100vh;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+  position: fixed;
+  z-index: 899;
+}
+.overlay {
+  background: rgba(49, 49, 49, 0.8);
+}
+.modal-content h2 {
+  color: #000;
+  font-size: 29px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160.188%; /* 46.454px */
+  letter-spacing: 1.015px;
+  margin-bottom: 1.5rem;
+}
+.pop-flex {
+  display: flex;
+  align-items: center;
+  gap: 1.5rem;
+  margin-bottom: 2rem;
+}
+.pop-flex input {
+  flex: 2;
+  height: 3rem;
+  padding: 0.5rem 2rem;
+  border-radius: 22px;
+  border: 2px solid #ccc;
+  background: #fff;
+  color: #979797;
+  font-family: sans-serif;
+  font-size: 23px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.3; /* 36.843px */
+  letter-spacing: 0.805px;
+}
+.pop-flex ul {
+  flex: 2 1;
+  list-style: none;
+  display: flex;
+  gap: 1rem;
+  padding: 0;
+}
+.pop-flex ul li {
+  cursor: pointer;
+}
+.pop-flex h1 {
+  flex: 1;
+  color: #000;
+  font-family: sans-serif;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 160.188%; /* 43.754px */
+  letter-spacing: 0.956px;
+  text-align: start;
+}
+.create-btn {
+  height: 3rem;
+  width: fit-content;
+  background-color: #000;
+  color: #fff;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 1.2;
+  letter-spacing: 0.7px;
+  padding: 0.5rem 2rem;
+  cursor: pointer;
+  border-radius: 10px;
+}
+.color-box {
+  width: 40px;
+  height: 40px;
+  border-radius: 50%;
+  border: 2px solid transparent;
+}
+.border-color {
+  border: 2px solid red;
+}
+.color-box:hover {
+  box-shadow: #353535;
+  /* border: 2px solid #878383; */
+}
+
+/* GROUPLIST */
+.group-profileBox {
+  margin: 0 0 0 1rem;
+}
+.group-profile {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  cursor: pointer;
+  /* background-color: #f7ecdc; */
+  border-radius: 2rem 0 0 2rem;
+  padding: 1rem;
+  margin-bottom: 1rem;
+}
+.selected {
+  background-color: #f7ecdc;
+}
+.profile-cicle {
+  width: 45px;
+  height: 45px;
+  border-radius: 50%;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+.profile-cicle h2 {
+  color: #fff;
+  font-family: sans-serif;
+  font-size: 24.115px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 97.688%; /* 23.558px */
+  letter-spacing: 0.482px;
+}
+.group-profile h1 {
+  color: #000;
+  font-family: sans-serif;
+  font-size: 20.67px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.413px;
+}
+/* NOTE LIST */
+.note-input {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
+  padding: 1rem;
+  background: #e8e8e8;
+}
+.note-input div textarea {
+  width: 100%;
+  height: 150px;
+  border-radius: 9px;
+  border: 1px solid #ccc;
+  background: #fff;
+  padding: 1rem;
+}
+.note-input button {
+  position: absolute;
+  right: 1rem;
+  bottom: 1rem;
+  border: none;
+  background: #ffff;
+  cursor: pointer;
+  padding: 0.5rem 0 0 1.5rem;
+}
+ul.notes-list {
+  padding: 2rem;
+  height: calc(100% - 8rem);
+  overflow: scroll;
+}
+.note-item {
+  display: flex;
+  gap: 2rem;
+  margin-bottom: 1.5rem;
+}
+.note-meta {
+  text-align: start;
+  flex: 1;
+}
+.note-meta p {
+  margin-bottom: 6px;
+  color: #353535;
+  font-size: 14px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: 1;
+  letter-spacing: 0.373px;
+}
+.note-content {
+  flex: 3;
+  text-align: start;
+}
+.profile-notelist {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  padding: 1rem;
+  background-color: #e8e8e8;
+}
+.profile-notelist h1 {
+  color: #000;
+  font-size: 24px;
+  font-style: normal;
+  font-weight: 500;
+  line-height: normal;
+  letter-spacing: 0.48px;
+}
