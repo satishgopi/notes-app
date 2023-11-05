@@ -1,5 +1,7 @@
 import React from "react";
 import sendBut from "../assets/img/ic-type-enter.svg";
+import bgImg from "../assets/img/bg-noteapp.png";
+import lock from "../assets/img/ic-lock.svg";
 
 const NoteList = ({
   selectedGroup,
@@ -9,6 +11,8 @@ const NoteList = ({
   onAddNote,
   selectedGroupName,
   selectedGroupColor,
+  onGoBack,
+  noteClass,
 }) => {
   const filteredNotes = selectedGroup
     ? notes.filter((note) => note.groupId === selectedGroup)
@@ -47,31 +51,57 @@ const NoteList = ({
   }
 
   return (
-    <div className="main-content">
-      <h2>Notes</h2>
+    <div className={noteClass ? "mobile-block main-content" : "main-content"}>
+      {selectedGroup ? (
+        ""
+      ) : (
+        <div className="note-bg-wrapper">
+          <div className="note-bg">
+            <img src={bgImg} alt="" />
+            <h1>Pocket Notes</h1>
+            <p>
+              Send and receive messages without keeping your phone online. Use
+              Pocket Notes on up to 4 linked devices and 1 mobile phone
+            </p>
+          </div>
+          <div className="lock-encry">
+            <div className="lock-btn">
+              <img src={lock} alt="" />
+              <p>end-to-end encrypted</p>
+            </div>
+          </div>
+        </div>
+      )}
       {selectedGroup && (
         <div className="profile-notelist">
+          <button onClick={onGoBack}>Go back</button>
           <div
             className="profile-cicle"
             style={{ backgroundColor: selectedGroupColor }}
           >
-            <h2>{selectedGroupName ? selectedGroupName.slice(0, 2) : ""}</h2>
+            <h2>
+              {selectedGroupName
+                ? selectedGroupName.slice(0, 2).toUpperCase()
+                : ""}
+            </h2>
           </div>
           <h1>{selectedGroupName}</h1>
         </div>
       )}
-      <ul className="notes-list">
-        {filteredNotes.map((note) => (
-          <li key={note.id} className="note-item">
-            <div className="note-meta">
-              <p>{formatTime(note.lastUpdated)}</p>
+      {selectedGroup && (
+        <ul className="notes-list">
+          {filteredNotes.map((note) => (
+            <li key={note.id} className="note-item">
+              <div className="note-meta">
+                <p>{formatTime(note.lastUpdated)}</p>
 
-              <p>{formatDateMonthYear(note.createdAt)}</p>
-            </div>
-            <div className="note-content">{note.content}</div>
-          </li>
-        ))}
-      </ul>
+                <p>{formatDateMonthYear(note.createdAt)}</p>
+              </div>
+              <div className="note-content">{note.content}</div>
+            </li>
+          ))}
+        </ul>
+      )}
       {selectedGroup && (
         <div className="note-input">
           <div style={{ position: "relative" }}>

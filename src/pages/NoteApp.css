@@ -67,7 +67,7 @@
   color: #000;
   font-size: 29px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 160.188%; /* 46.454px */
   letter-spacing: 1.015px;
   margin-bottom: 1.5rem;
@@ -170,7 +170,7 @@
 .profile-cicle h2 {
   color: #fff;
   font-family: sans-serif;
-  font-size: 24.115px;
+  font-size: 20px;
   font-style: normal;
   font-weight: 500;
   line-height: 97.688%; /* 23.558px */
@@ -238,6 +238,7 @@ ul.notes-list {
   flex: 3;
   text-align: start;
 }
+
 .profile-notelist {
   display: flex;
   align-items: center;
@@ -252,4 +253,107 @@ ul.notes-list {
   font-weight: 500;
   line-height: normal;
   letter-spacing: 0.48px;
+}
+.note-bg-wrapper {
+  padding: 3rem;
+  position: absolute;
+  top: 0;
+  left: 0;
+  bottom: 0;
+  right: 0;
+}
+.note-bg h1 {
+  color: #000;
+  font-size: 50px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: normal;
+  letter-spacing: 1px;
+}
+.note-bg p {
+  color: #292929;
+  font-size: 20px;
+  font-style: normal;
+  font-weight: 400;
+  line-height: 32px; /* 145.455% */
+  letter-spacing: 0.44px;
+}
+.lock-encry {
+  position: absolute;
+  bottom: 1rem;
+  right: 0;
+  left: 0;
+}
+.lock-btn {
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  margin: auto;
+  justify-content: center;
+  margin: 1rem;
+}
+.note-bg {
+  max-width: 600px;
+  margin: auto;
+  position: absolute;
+  left: 50%;
+  right: -11%;
+  top: 50%;
+  transform: translate(-50%, -50%);
+}
+.note-bg img {
+  width: 100%;
+  height: auto;
+  max-width: 400px;
+}
+
+@media only screen and (max-width: 600px) {
+  .main-content {
+    display: none;
+  }
+  .modal-content {
+    max-width: 300px;
+  }
+  .modal-content h2 {
+    font-size: 18px;
+  }
+  .pop-flex h1 {
+    font-size: 12px;
+    width: 30%;
+    display: contents;
+  }
+  .pop-flex input {
+    padding: 0.5rem 1rem;
+    font-size: 14px;
+    height: 2.5rem;
+    width: 70%;
+  }
+  .color-box {
+    width: 25px;
+    height: 25px;
+  }
+  .pop-flex ul {
+    gap: 6px;
+    width: 70%;
+  }
+  .pop-flex {
+    gap: 1rem;
+    margin-bottom: 1.5rem;
+  }
+  .create-btn {
+    width: 100%;
+  }
+  .mobile-hide {
+    display: none;
+  }
+  .mobile-block {
+    display: block;
+    margin: 1rem 0;
+  }
+  .group-profileBox {
+    margin: 0 1rem;
+  }
+  .selected {
+    background-color: #fff;
+  }
 }

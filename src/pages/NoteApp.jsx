@@ -12,6 +12,8 @@ function App() {
   const [isModalOpen, setIsModalOpen] = useState(false);
   const [color, setColor] = useState("");
 
+  const [hideMobile, setHideMobile] = useState(false);
+
   const colours = [
     {
       id: "1",
@@ -87,41 +89,89 @@ function App() {
     setNewNote("");
   };
 
+  const handleToggleSidebar = () => {
+    setHideMobile(!hideMobile);
+  };
+
   return (
     <div className="app-container">
-      <div className="sidebar">
-        <h1>Pocket Notes</h1>
-        <button
-          onClick={() => setIsModalOpen(true)}
-          className="create-notes-btn"
-        >
-          {" "}
-          + Create Notes group
-        </button>
-        <GroupList
-          groups={groups}
-          selectedGroup={selectedGroup}
-          setSelectedGroup={setSelectedGroup}
-        />
-      </div>
+      {hideMobile ? (
+        <div className={hideMobile ? "sidebar mobile-hide" : "sidebar gg"}>
+          <h1>Pocket Notes</h1>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="create-notes-btn"
+          >
+            {" "}
+            + Create Notes group
+          </button>
+          <GroupList
+            groups={groups}
+            selectedGroup={selectedGroup}
+            setSelectedGroup={setSelectedGroup}
+            onGoBack={handleToggleSidebar}
+          />
+        </div>
+      ) : (
+        <div className={hideMobile ? "sidebar" : "sidebar mobile-block"}>
+          <h1>Pocket Notes</h1>
+          <button
+            onClick={() => setIsModalOpen(true)}
+            className="create-notes-btn"
+          >
+            {" "}
+            + Create Notes group
+          </button>
+          <GroupList
+            groups={groups}
+            selectedGroup={selectedGroup}
+            setSelectedGroup={setSelectedGroup}
+            onGoBack={handleToggleSidebar}
+          />
+        </div>
+      )}
 
-      <NoteList
-        selectedGroup={selectedGroup}
-        notes={notes}
-        newNote={newNote}
-        setNewNote={setNewNote}
-        onAddNote={handleAddNote}
-        selectedGroupName={
-          selectedGroup
-            ? groups.find((group) => group.id === selectedGroup).name
-            : ""
-        }
-        selectedGroupColor={
-          selectedGroup
-            ? groups.find((group) => group.id === selectedGroup).color
-            : ""
-        }
-      />
+      {hideMobile ? (
+        <NoteList
+          selectedGroup={selectedGroup}
+          notes={notes}
+          newNote={newNote}
+          setNewNote={setNewNote}
+          onAddNote={handleAddNote}
+          selectedGroupName={
+            selectedGroup
+              ? groups.find((group) => group.id === selectedGroup).name
+              : ""
+          }
+          selectedGroupColor={
+            selectedGroup
+              ? groups.find((group) => group.id === selectedGroup).color
+              : ""
+          }
+          onGoBack={handleToggleSidebar}
+          noteClass={true}
+        />
+      ) : (
+        <NoteList
+          selectedGroup={selectedGroup}
+          notes={notes}
+          newNote={newNote}
+          setNewNote={setNewNote}
+          onAddNote={handleAddNote}
+          selectedGroupName={
+            selectedGroup
+              ? groups.find((group) => group.id === selectedGroup).name
+              : ""
+          }
+          selectedGroupColor={
+            selectedGroup
+              ? groups.find((group) => group.id === selectedGroup).color
+              : ""
+          }
+          onGoBack={handleToggleSidebar}
+          noteClass={false}
+        />
+      )}
 
       {isModalOpen && (
         <div className="modal">
