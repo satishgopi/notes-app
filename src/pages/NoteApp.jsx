@@ -2,6 +2,7 @@ import React, { useState, useEffect } from "react";
 import "./NoteApp.css"; // Import your CSS file for styling
 import GroupList from "../components/GroupList";
 import NoteList from "../components/NoteList";
+import plus from "../assets/img/ic-plus.svg";
 
 function App() {
   const [groups, setGroups] = useState([]);
@@ -97,13 +98,15 @@ function App() {
     <div className="app-container">
       {hideMobile ? (
         <div className={hideMobile ? "sidebar mobile-hide" : "sidebar gg"}>
-          <h1>Pocket Notes</h1>
+          <h1 className="header-title">Pocket Notes</h1>
           <button
             onClick={() => setIsModalOpen(true)}
             className="create-notes-btn"
           >
-            {" "}
-            + Create Notes group
+            <div className="create-btn-flex">
+              <img src={plus} alt="" />
+              <h1>Create Notes group</h1>
+            </div>
           </button>
           <GroupList
             groups={groups}
@@ -114,13 +117,15 @@ function App() {
         </div>
       ) : (
         <div className={hideMobile ? "sidebar" : "sidebar mobile-block"}>
-          <h1>Pocket Notes</h1>
+          <h1 className="header-title">Pocket Notes</h1>
           <button
             onClick={() => setIsModalOpen(true)}
             className="create-notes-btn"
           >
-            {" "}
-            + Create Notes group
+            <div className="create-btn-flex">
+              <img src={plus} alt="" />
+              <h1>Create Notes group</h1>
+            </div>
           </button>
           <GroupList
             groups={groups}

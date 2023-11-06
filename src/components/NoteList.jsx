@@ -2,6 +2,7 @@ import React from "react";
 import sendBut from "../assets/img/ic-type-enter.svg";
 import bgImg from "../assets/img/bg-noteapp.png";
 import lock from "../assets/img/ic-lock.svg";
+import rightArrow from "../assets/img/ic-right-arrow.svg";
 
 const NoteList = ({
   selectedGroup,
@@ -74,7 +75,9 @@ const NoteList = ({
       )}
       {selectedGroup && (
         <div className="profile-notelist">
-          <button onClick={onGoBack}>Go back</button>
+          <button onClick={onGoBack} className="goBack-btn">
+            <img src={rightArrow} alt="" />
+          </button>
           <div
             className="profile-cicle"
             style={{ backgroundColor: selectedGroupColor }}

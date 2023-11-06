@@ -5,7 +5,7 @@
 }
 .sidebar {
   flex: 1;
-  margin: 1rem 0 1rem 1rem;
+  padding: 1.5rem 0 1.5rem 1.5rem;
 }
 .main-content {
   flex: 2;
@@ -20,12 +20,30 @@
   cursor: pointer;
   color: #fff;
   font-family: sans-serif;
-  font-size: 18px;
+  font-size: 16px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 400;
   line-height: 97.688%;
   letter-spacing: 0.54px;
-  margin: 1rem;
+  margin: 1rem 0 2rem;
+}
+.header-title {
+  color: #000;
+  font-size: 32px;
+  font-style: normal;
+  font-weight: 600;
+  line-height: normal;
+  letter-spacing: 0.63px;
+  text-align: start;
+  margin-bottom: 1.5rem;
+}
+.create-btn-flex {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+}
+.create-btn-flex h1 {
+  font-weight: 400;
 }
 /* MODEL */
 .modal {
@@ -109,7 +127,7 @@
   font-family: sans-serif;
   font-size: 20px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 160.188%; /* 43.754px */
   letter-spacing: 0.956px;
   text-align: start;
@@ -135,11 +153,10 @@
   border: 2px solid transparent;
 }
 .border-color {
-  border: 2px solid red;
+  border: 2px solid #000;
 }
 .color-box:hover {
-  box-shadow: #353535;
-  /* border: 2px solid #878383; */
+  border: 2px solid #878383;
 }
 
 /* GROUPLIST */
@@ -160,8 +177,8 @@
   background-color: #f7ecdc;
 }
 .profile-cicle {
-  width: 45px;
-  height: 45px;
+  width: 60px;
+  height: 60px;
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -172,7 +189,7 @@
   font-family: sans-serif;
   font-size: 20px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 97.688%; /* 23.558px */
   letter-spacing: 0.482px;
 }
@@ -201,6 +218,8 @@
   border: 1px solid #ccc;
   background: #fff;
   padding: 1rem;
+  font-size: 20px;
+  letter-spacing: 1px;
 }
 .note-input button {
   position: absolute;
@@ -230,7 +249,7 @@ ul.notes-list {
   color: #353535;
   font-size: 14px;
   font-style: normal;
-  font-weight: 500;
+  font-weight: 600;
   line-height: 1;
   letter-spacing: 0.373px;
 }
@@ -306,8 +325,37 @@ ul.notes-list {
   height: auto;
   max-width: 400px;
 }
+.goBack-btn {
+  display: none;
+}
+textarea {
+  resize: none;
+}
 
 @media only screen and (max-width: 600px) {
+  .create-notes-btn {
+    font-size: 12px;
+    width: 100%;
+    margin: 1rem 0 2rem;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+  }
+  ul.notes-list {
+    padding: 1rem;
+  }
+  .note-item {
+    gap: 1rem;
+  }
+  .note-meta {
+    flex: 1.5;
+  }
+  .note-content {
+    flex: 2;
+  }
+  .sidebar {
+    padding: 1rem;
+  }
   .main-content {
     display: none;
   }
@@ -321,6 +369,7 @@ ul.notes-list {
     font-size: 12px;
     width: 30%;
     display: contents;
+    letter-spacing: 0;
   }
   .pop-flex input {
     padding: 0.5rem 1rem;
@@ -348,12 +397,29 @@ ul.notes-list {
   }
   .mobile-block {
     display: block;
-    margin: 1rem 0;
+    margin: 0;
   }
   .group-profileBox {
     margin: 0 1rem;
   }
+  .profile-cicle {
+    width: 60px;
+    height: 60px;
+  }
+  .group-profile h1 {
+    font-size: 22px;
+  }
+  .group-profile {
+    padding: 0;
+  }
   .selected {
     background-color: #fff;
+    padding: 0;
+  }
+  .goBack-btn {
+    border: none;
+    margin-top: 6px;
+    display: block;
+    background: transparent;
   }
 }
