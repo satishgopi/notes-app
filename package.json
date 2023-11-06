@@ -1,6 +1,6 @@
 {
+  "homepage": "https://satishgopi.github.io/notes-app",
   "name": "notes-app",
-  "home": "https://satishgopi.github.io/notes-app/",
   "version": "0.1.0",
   "private": true,
   "dependencies": {
