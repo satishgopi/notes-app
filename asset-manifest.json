@@ -1,0 +1,20 @@
+{
+  "files": {
+    "main.css": "/notes-app/static/css/main.07f64e71.css",
+    "main.js": "/notes-app/static/js/main.f2b8f504.js",
+    "static/js/787.9243050f.chunk.js": "/notes-app/static/js/787.9243050f.chunk.js",
+    "static/media/bg-noteapp.png": "/notes-app/static/media/bg-noteapp.c33cf97ae27aef5a7034.png",
+    "static/media/ic-lock.svg": "/notes-app/static/media/ic-lock.90739ae40c6cd0be65bb6e8e2c595140.svg",
+    "static/media/ic-right-arrow.svg": "/notes-app/static/media/ic-right-arrow.e80da3e7e30cb0d73b5885c06d5b2abb.svg",
+    "index.html": "/notes-app/index.html",
+    "static/media/ic-plus.svg": "/notes-app/static/media/ic-plus.459d519595fec3b9bd6a63f0a3972cd4.svg",
+    "static/media/ic-type-enter.svg": "/notes-app/static/media/ic-type-enter.6e4ec6947db9203f941b75970a42188c.svg",
+    "main.07f64e71.css.map": "/notes-app/static/css/main.07f64e71.css.map",
+    "main.f2b8f504.js.map": "/notes-app/static/js/main.f2b8f504.js.map",
+    "787.9243050f.chunk.js.map": "/notes-app/static/js/787.9243050f.chunk.js.map"
+  },
+  "entrypoints": [
+    "static/css/main.07f64e71.css",
+    "static/js/main.f2b8f504.js"
+  ]
+}
